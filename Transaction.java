@@ -1,15 +1,13 @@
 public class Transaction {
     public Customer customer;
-    public Product productItem;
+    public Product product;
 
     //Constructor
-    public Transaction() {
-        customer = new Customer();
-        customer.fullName = "Default Customer";
-
-        productItem = new Product();
-        productItem.modelName = "Default Product";
-        productItem.price = 0.0;
+    public Transaction(Customer c) {
+        customer = c; 
+        product = new Product(); 
+        product.modelName = "Vivo Y11";
+        product.price = 3999.00;
     }
 
     //Identifier
@@ -21,6 +19,6 @@ public class Transaction {
     public String getReport() {
         return "----- TRANSACTION REPORT -----\n"
                + customer.getDetails() + "\n"
-               + productItem.getDetails();
+               + product.getDetails();
     }
 }
